@@ -61,7 +61,7 @@
         hide-footer
         hide-header
         hide-backdrop
-        data-cy=activity-item-delete-button
+        data-cy=modal-delete
         id="modalDelete"
         ref="modalDelete"
       >

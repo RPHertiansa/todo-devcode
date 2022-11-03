@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header></Header>
-    <b-row class="px-5 mx-5" align-v="center">
+    <b-row data-cy=activity-item class="px-5 mx-5" align-v="center">
       <b-col col-6>
         <b-row>
           <h3>
