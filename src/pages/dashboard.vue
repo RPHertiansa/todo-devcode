@@ -25,6 +25,8 @@
       <b-row class="px-5 mx-5" align-v="center">
         <div class="col-lg-3 col-md-5  my-4 " v-for="(data, index) in activityList" :key="index">
           <b-card
+            data-cy=activity-item
+            @click="goToDetail(data.id)"
             style="height: 15rem;"
             class="shadow mb-2 mr-2"
           >
@@ -33,7 +35,6 @@
                 data-cy=activity-item-title
                 class="ml-2 font-weight-bold"
                 type="button"
-                @click="goToDetail(data.id)"
               >
                 {{ data.title }}</h3>
               <b-col cols="10">
@@ -44,6 +45,7 @@
               <b-col cols="2">
                 <b-icon-trash
                   class="text-muted" type="button"
+                  data-cy=activity-item-delete-button
                   @click="showModal(data)">
                 </b-icon-trash>
               </b-col>
@@ -59,7 +61,7 @@
         hide-footer
         hide-header
         hide-backdrop
-        data-cy=”delete-activity”
+        data-cy=activity-item-delete-button
         id="modalDelete"
         ref="modalDelete"
       >
@@ -83,11 +85,11 @@
         hide-footer
         hide-header
         hide-backdrop
-        data-cy=modal-information
         id="alertActivity"
         ref="alertActivity"
       >
-        <b-row align-v="center">
+        <b-row align-v="center" data-cy=modal-information
+        >
           <b-icon-info-circle class="mx-2 text-info"></b-icon-info-circle>
           <span>Activity Berhasil Dihapus</span>
         </b-row>

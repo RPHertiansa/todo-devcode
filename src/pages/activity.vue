@@ -8,7 +8,8 @@
             <b-icon-chevron-left type="button" @click="goBack"></b-icon-chevron-left>
           </h3>
           <div v-if="!isEdit">
-            <h3 class="font-weight-bold text-capitalize">{{ activityData.title }}
+            <h3 data-cy=activity-item-title class="font-weight-bold text-capitalize">
+              {{ activityData.title }}
               <b-icon-pencil type="button" @click="doEdit"></b-icon-pencil>
             </h3>
           </div>
@@ -31,7 +32,9 @@
         </b-row>
       </b-col>
       <b-col col-6 class="text-right">
-        <b-button class="ml-auto" pill variant="primary" @click="showModalAdd">Tambah</b-button>
+        <b-button class="ml-auto" pill variant="primary" data-cy=activity-item-add-button
+                  @click="showModalAdd">Tambah
+        </b-button>
       </b-col>
     </b-row>
     <div data-cy=”item-list-empty-state”
