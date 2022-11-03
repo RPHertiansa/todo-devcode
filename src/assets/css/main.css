@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+#app {
+  font-family: Poppins, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.linov-text {
+  color: #7CBF95;
+}
+
+.linov-btn {
+  background-color: #7CBF95 !important;
+  color: white !important;
+  border: solid 1px #7CBF95 !important;
+}
+
+.linov-btn:hover {
+  -webkit-transform: scale(1.01) !important;
+          transform: scale(1.01) !important;
+  background-color: #7CBF95 !important;
+  -webkit-filter: contrast(1.1) !important;
+          filter: contrast(1.1) !important;
+}
+
+.linov-btn::after {
+  background-color: #7CBF95;
+}
+
+.line {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.cart-icon {
+  margin-top: 2px;
+}
+
+.register .login {
+  background: #ffffff;
+  border-radius: 30px;
+  text-align: left;
+  border: 1px solid #7CBF95;
+}
+
+.arrow-icon {
+  margin-top: 5px;
+}
+
+.empty {
+  margin-top: 150px;
+  height: 250px;
+}
+
+.img-table {
+  width: 300px !important;
+}
+
+.round {
+  border-radius: 4% !important;
+}
+
+.boxshadow {
+  -webkit-box-shadow: 5px 7px 10px rgba(0, 0, 0, 0.2) !important;
+          box-shadow: 5px 7px 10px rgba(0, 0, 0, 0.2) !important;
+}
+
+.bread {
+  background-color: transparent !important;
+  padding: 0px !important;
+}
+
+/*# sourceMappingURL=main.css.map */
