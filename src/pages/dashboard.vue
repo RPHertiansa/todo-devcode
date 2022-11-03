@@ -3,10 +3,14 @@
     <Header></Header>
     <b-row class="px-5 mx-5" align-v="center">
       <b-col col-6>
-        <h3 class="font-weight-bold text-capitalize">Activity</h3>
+        <h3 class="font-weight-bold text-capitalize" data-cy=activity-title>Activity</h3>
       </b-col>
       <b-col col-6 class="text-right">
-        <b-button class="ml-auto" pill variant="primary" @click="addActivity">Tambah</b-button>
+        <b-button
+          class="ml-auto"
+          pill variant="primary" data-cy=activity-add-button
+          @click="addActivity">Tambah
+        </b-button>
       </b-col>
     </b-row>
     <div v-if="activityList.length === 0" data-cy=”dashboard-empty-state”>
@@ -17,7 +21,7 @@
       </b-row>
     </div>
 
-    <div v-else data-cy=”dashboard”>
+    <div v-else data-cy=activity-item>
       <b-row class="px-5 mx-5" align-v="center">
         <div class="col-lg-3 col-md-5  my-4 " v-for="(data, index) in activityList" :key="index">
           <b-card
@@ -25,10 +29,15 @@
             class="shadow mb-2 mr-2"
           >
             <b-row align-v="end">
-              <h3 class="ml-2 font-weight-bold" type="button" @click="goToDetail(data.id)">
+              <h3
+                data-cy=activity-item-title
+                class="ml-2 font-weight-bold"
+                type="button"
+                @click="goToDetail(data.id)"
+              >
                 {{ data.title }}</h3>
               <b-col cols="10">
-                <h6 class="text-muted">
+                <h6 class="text-muted" data-cy=activity-item-date>
                   {{ data.created_at }}
                 </h6>
               </b-col>
@@ -59,10 +68,12 @@
             <b-icon-exclamation-triangle class="text-danger"></b-icon-exclamation-triangle>
           </h1>
           <p class="my-4">Apakah anda yakin menghapus activity <b>{{ titleDelete }}</b>?</p>
-          <b-button class="ml-auto" pill variant="light" @click="$bvModal.hide('modalDelete')">
+          <b-button class="ml-auto" data-cy=modal-delete-cancel-button pill variant="light"
+                    @click="$bvModal.hide('modalDelete')">
             Batal
           </b-button>
-          <b-button class="ml-auto" pill variant="danger" @click="deleteActivity()">
+          <b-button class="ml-auto" pill variant="danger" data-cy=activity-item-delete-button
+                    @click="deleteActivity()">
             Hapus
           </b-button>
         </div>
@@ -72,7 +83,7 @@
         hide-footer
         hide-header
         hide-backdrop
-        data-cy=”alert-activity”
+        data-cy=modal-information
         id="alertActivity"
         ref="alertActivity"
       >

@@ -27,14 +27,15 @@
 
             </b-row>
           </h3>
-
+          {{ activityData }} {{ activityData.todo_items.length }}
         </b-row>
       </b-col>
       <b-col col-6 class="text-right">
         <b-button class="ml-auto" pill variant="primary" @click="showModalAdd">Tambah</b-button>
       </b-col>
     </b-row>
-    <div data-cy=”item-list-empty-state” v-if="activityData.todo_items.length === 0">
+    <div data-cy=”item-list-empty-state”
+         v-if="activityData.todo_items === undefined ||  activityData.todo_items.length === 0">
       <b-row class="px-5 mx-5" align-v="center">
         <b-col class="text-center">
           <img src="../assets/images/todo-empty-state.png" height="400" alt="">
@@ -103,6 +104,9 @@ export default {
       return this.$store.getters['activity/getActivityDetail']
     }
   },
+  async created () {
+    await this.getDetail()
+  },
   async mounted () {
     await this.getDetail()
     this.newTitle = this.activityData.title
@@ -129,6 +133,7 @@ export default {
     },
     showModalAdd () {
       this.$bvModal.show('modalAdd')
+      console.log('test')
     }
   }
 }
